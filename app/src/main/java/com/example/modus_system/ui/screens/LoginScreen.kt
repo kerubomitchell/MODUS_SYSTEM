@@ -34,6 +34,14 @@ fun LoginScreen(navController: NavController) {
     var passwordVisible by remember { mutableStateOf(false) }
     var isLoading by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf("") }
+    var successMessage by remember { mutableStateOf("") }
+
+    // Forgot password dialog
+    var showForgotDialog by remember { mutableStateOf(false) }
+    var resetEmail by remember { mutableStateOf("") }
+    var resetEmailError by remember { mutableStateOf("") }
+    var resetSuccess by remember { mutableStateOf(false) }
+    var resetLoading by remember { mutableStateOf(false) }
 
     val isFormValid = email.isNotBlank() && password.isNotBlank()
 
@@ -101,6 +109,28 @@ fun LoginScreen(navController: NavController) {
             )
         }
 
+        // Forgot Password link
+        item {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.End
+            ) {
+                TextButton(onClick = {
+                    resetEmail = email
+                    resetEmailError = ""
+                    resetSuccess = false
+                    showForgotDialog = true
+                }) {
+                    Text(
+                        "Forgot Password?",
+                        fontSize = 13.sp,
+                        color = MaterialTheme.colorScheme.primary,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                }
+            }
+        }
+
         // Error Message
         if (errorMessage.isNotBlank()) {
             item {
@@ -114,6 +144,24 @@ fun LoginScreen(navController: NavController) {
                         errorMessage,
                         modifier = Modifier.padding(12.dp),
                         color = MaterialTheme.colorScheme.onErrorContainer
+                    )
+                }
+            }
+        }
+
+        // Success Message
+        if (successMessage.isNotBlank()) {
+            item {
+                Card(
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.primaryContainer
+                    ),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        successMessage,
+                        modifier = Modifier.padding(12.dp),
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                 }
             }
@@ -185,5 +233,136 @@ fun LoginScreen(navController: NavController) {
             }
             Spacer(modifier = Modifier.height(24.dp))
         }
+    }
+
+    // Forgot Password Dialog
+    if (showForgotDialog) {
+        AlertDialog(
+            onDismissRequest = {
+                if (!resetLoading) {
+                    showForgotDialog = false
+                    resetSuccess = false
+                    resetEmailError = ""
+                }
+            },
+            icon = { Text("🔑", fontSize = 32.sp) },
+            title = {
+                Text(
+                    "Restore Access",
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    if (resetSuccess) {
+                        // Success state
+                        Card(
+                            colors = CardDefaults.cardColors(
+                                containerColor = MaterialTheme.colorScheme.primaryContainer
+                            )
+                        ) {
+                            Column(modifier = Modifier.padding(12.dp)) {
+                                Text(
+                                    "✅ Reset link sent!",
+                                    fontWeight = FontWeight.Bold,
+                                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                                )
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(
+                                    "Check your email at $resetEmail for a password reset link.",
+                                    fontSize = 13.sp,
+                                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                                )
+                            }
+                        }
+                    } else {
+                        // Input state
+                        Text(
+                            "Enter your email address and we'll send you a link to reset your password.",
+                            fontSize = 13.sp,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                        )
+                        Spacer(modifier = Modifier.height(4.dp))
+                        OutlinedTextField(
+                            value = resetEmail,
+                            onValueChange = {
+                                resetEmail = it
+                                resetEmailError = ""
+                            },
+                            label = { Text("Email Address") },
+                            leadingIcon = {
+                                Icon(Icons.Default.Email, contentDescription = null)
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Email
+                            ),
+                            isError = resetEmailError.isNotBlank(),
+                            supportingText = {
+                                if (resetEmailError.isNotBlank()) {
+                                    Text(resetEmailError)
+                                }
+                            }
+                        )
+                    }
+                }
+            },
+            confirmButton = {
+                if (resetSuccess) {
+                    TextButton(onClick = {
+                        showForgotDialog = false
+                        resetSuccess = false
+                    }) {
+                        Text("Done", fontWeight = FontWeight.Bold)
+                    }
+                } else {
+                    TextButton(
+                        onClick = {
+                            if (resetEmail.isBlank()) {
+                                resetEmailError = "Please enter your email"
+                            } else if (!android.util.Patterns.EMAIL_ADDRESS
+                                    .matcher(resetEmail).matches()
+                            ) {
+                                resetEmailError = "Enter a valid email address"
+                            } else {
+                                resetLoading = true
+                                scope.launch {
+                                    // TODO: Replace with Firebase password reset
+                                    // FirebaseAuth.getInstance()
+                                    //   .sendPasswordResetEmail(resetEmail)
+                                    kotlinx.coroutines.delay(1500)
+                                    resetLoading = false
+                                    resetSuccess = true
+                                }
+                            }
+                        },
+                        enabled = !resetLoading
+                    ) {
+                        if (resetLoading) {
+                            CircularProgressIndicator(modifier = Modifier.size(16.dp))
+                        } else {
+                            Text(
+                                "Send Reset Link",
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+                }
+            },
+            dismissButton = {
+                if (!resetSuccess) {
+                    TextButton(
+                        onClick = {
+                            showForgotDialog = false
+                            resetEmailError = ""
+                        },
+                        enabled = !resetLoading
+                    ) {
+                        Text("Cancel")
+                    }
+                }
+            }
+        )
     }
 }

@@ -20,6 +20,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.modus_system.data.FirebaseAuthManager
 import com.example.modus_system.data.UserPreferences
 import com.example.modus_system.ui.Screen
 import kotlinx.coroutines.launch
@@ -30,6 +31,7 @@ fun RegisterScreen(navController: NavController) {
     val scope = rememberCoroutineScope()
     val context = androidx.compose.ui.platform.LocalContext.current
     val userPreferences = remember { UserPreferences(context) }
+    val firebaseAuth = remember { FirebaseAuthManager() }
 
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -41,7 +43,6 @@ fun RegisterScreen(navController: NavController) {
     var isLoading by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf("") }
 
-    // Validation
     val isNameValid = name.length >= 2
     val isEmailValid = android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     val isPhoneValid = phone.length >= 10
@@ -116,7 +117,7 @@ fun RegisterScreen(navController: NavController) {
             )
         }
 
-        // Phone Number
+        // Phone
         item {
             OutlinedTextField(
                 value = phone,
@@ -218,15 +219,28 @@ fun RegisterScreen(navController: NavController) {
                         isLoading = true
                         errorMessage = ""
                         scope.launch {
-                            userPreferences.saveUser(
+                            val result = firebaseAuth.register(
                                 name = name,
                                 email = email,
                                 phone = phone,
                                 password = password
                             )
-                            isLoading = false
-                            navController.navigate(Screen.Login.route) {
-                                popUpTo(Screen.Register.route) { inclusive = true }
+                            if (result.isSuccess) {
+                                // Save locally too
+                                userPreferences.saveUser(
+                                    name = name,
+                                    email = email,
+                                    phone = phone,
+                                    password = password
+                                )
+                                isLoading = false
+                                navController.navigate(Screen.Home.route) {
+                                    popUpTo(Screen.Register.route) { inclusive = true }
+                                }
+                            } else {
+                                isLoading = false
+                                errorMessage = result.exceptionOrNull()?.message
+                                    ?: "Registration failed. Please try again."
                             }
                         }
                     } else {

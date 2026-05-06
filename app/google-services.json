@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "756566512488",
+    "project_id": "modus-system",
+    "storage_bucket": "modus-system.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756566512488:android:05fe2c4b23e82e41227cdd",
+        "android_client_info": {
+          "package_name": "com.example.modus_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVaQKP_p74TeZ8ccF4TM6GLtdM8JqYyK8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
