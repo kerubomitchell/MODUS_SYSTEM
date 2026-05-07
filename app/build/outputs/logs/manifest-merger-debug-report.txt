@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:2:1-18:12
-INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:2:1-18:12
-INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:2:1-18:12
-INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:2:1-18:12
+ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:2:1-18:12
+INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:2:1-18:12
+INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:2:1-18:12
+INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:2:1-18:12
 MERGED from [androidx.room:room-runtime:2.6.1] /home/emobilis/.gradle/caches/9.0.0/transforms/afb2b64b4bfa3acefb93dbed30a57c2b/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.room:room-ktx:2.6.1] /home/emobilis/.gradle/caches/9.0.0/transforms/643d559a48f80bd29282981b8f760cbc/transformed/room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common:2.8.9] /home/emobilis/.gradle/caches/9.0.0/transforms/91945ac2542addb3c7ea600d086f8089/transformed/navigation-common-2.8.9/AndroidManifest.xml:17:1-22:12
@@ -116,16 +116,16 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /home/emobilis/.gradle/ca
 MERGED from [androidx.print:print:1.0.0] /home/emobilis/.gradle/caches/9.0.0/transforms/acea9d6d21c5e8e78aed2c5b75b3a800/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.play:core-common:2.0.3] /home/emobilis/.gradle/caches/9.0.0/transforms/684427a57d4bc168bb7235af628a72b7/transformed/core-common-2.0.3/AndroidManifest.xml:2:1-21:12
 	package
-		INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:3:5-17:19
-INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:3:5-17:19
+ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:3:5-17:19
+INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:3:5-17:19
 MERGED from [androidx.room:room-runtime:2.6.1] /home/emobilis/.gradle/caches/9.0.0/transforms/afb2b64b4bfa3acefb93dbed30a57c2b/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.room:room-runtime:2.6.1] /home/emobilis/.gradle/caches/9.0.0/transforms/afb2b64b4bfa3acefb93dbed30a57c2b/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.8.0] /home/emobilis/.gradle/caches/9.0.0/transforms/81f950da8f011059e0f07a5f07e02060/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
@@ -201,39 +201,39 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/emobilis/.gradle/cach
 MERGED from [com.google.android.play:core-common:2.0.3] /home/emobilis/.gradle/caches/9.0.0/transforms/684427a57d4bc168bb7235af628a72b7/transformed/core-common-2.0.3/AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.android.play:core-common:2.0.3] /home/emobilis/.gradle/caches/9.0.0/transforms/684427a57d4bc168bb7235af628a72b7/transformed/core-common-2.0.3/AndroidManifest.xml:11:5-19:19
 	android:extractNativeLibs
-		INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.16.0] /home/emobilis/.gradle/caches/9.0.0/transforms/c9129d8ec1a6f66b7f1b1abfac6ba9b3/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:6:9-35
 	android:label
-		ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:5:9-30
+		ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:5:9-30
 	android:allowBackup
-		ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:4:9-35
+		ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:4:9-35
 	android:theme
-		ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:7:9-50
+		ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:7:9-50
 activity#com.example.modus_system.MainActivity
-ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:8:9-16:20
+ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:8:9-16:20
 	android:windowSoftInputMode
-		ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:11:13-55
+		ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:11:13-55
 	android:exported
-		ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:10:13-36
+		ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:10:13-36
 	android:name
-		ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:9:13-41
+		ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:9:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:12:13-15:29
+ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:12:13-15:29
 action#android.intent.action.MAIN
-ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:13:17-69
+ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:13:17-69
 	android:name
-		ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:13:25-66
+		ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:13:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:14:17-77
+ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:14:17-77
 	android:name
-		ADDED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml:14:27-74
+		ADDED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml:14:27-74
 uses-sdk
-INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml
-INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml
+INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml
+INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml
 MERGED from [androidx.room:room-runtime:2.6.1] /home/emobilis/.gradle/caches/9.0.0/transforms/afb2b64b4bfa3acefb93dbed30a57c2b/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
 MERGED from [androidx.room:room-runtime:2.6.1] /home/emobilis/.gradle/caches/9.0.0/transforms/afb2b64b4bfa3acefb93dbed30a57c2b/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
 MERGED from [androidx.room:room-ktx:2.6.1] /home/emobilis/.gradle/caches/9.0.0/transforms/643d559a48f80bd29282981b8f760cbc/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
@@ -459,9 +459,9 @@ MERGED from [com.google.android.play:core-common:2.0.3] /home/emobilis/.gradle/c
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:23.2.0] /home/emobilis/.gradle/caches/9.0.0/transforms/c77d247b92ed0bfa2bda5b8490fc4e50/transformed/firebase-auth-23.2.0/AndroidManifest.xml:23:9-148
 	android:targetSdkVersion
-		INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/emobilis/Downloads/ModusApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/AndroidManifest.xml
 service#androidx.room.MultiInstanceInvalidationService
 ADDED from [androidx.room:room-runtime:2.6.1] /home/emobilis/.gradle/caches/9.0.0/transforms/afb2b64b4bfa3acefb93dbed30a57c2b/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
 	android:exported

@@ -9797,23 +9797,6 @@
             "outputFile": "com.example.modus_system.app-debug-70:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/home/emobilis/Downloads/ModusApp/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "42",
-                        "endOffsets": "93"
-                    },
-                    "to": {
-                        "startLines": "122",
-                        "startColumns": "4",
-                        "startOffsets": "7666",
-                        "endColumns": "42",
-                        "endOffsets": "7704"
-                    }
-                },
-                {
                     "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/8504bb006eeca8942747182a85162296/transformed/material-release/res/values/values.xml",
                     "from": {
                         "startLines": "2",
@@ -9886,6 +9869,23 @@
                     }
                 },
                 {
+                    "source": "/home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "42",
+                        "endOffsets": "93"
+                    },
+                    "to": {
+                        "startLines": "122",
+                        "startColumns": "4",
+                        "startOffsets": "7666",
+                        "endColumns": "42",
+                        "endOffsets": "7704"
+                    }
+                },
+                {
                     "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/6958c8445a661775a9012f7c76759c56/transformed/foundation-release/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4",
@@ -9900,6 +9900,23 @@
                         "startOffsets": "7709,17121,17177",
                         "endColumns": "45,55,54",
                         "endOffsets": "7750,17172,17227"
+                    }
+                },
+                {
+                    "source": "/home/emobilis/Downloads/Modus-Behavioral-Agent/app/build/generated/res/processDebugGoogleServices/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,137,241,350,470,574",
+                        "endColumns": "81,103,108,119,103,72",
+                        "endOffsets": "132,236,345,465,569,642"
+                    },
+                    "to": {
+                        "startLines": "158,159,160,161,162,229",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "11226,11308,11412,11521,11641,16472",
+                        "endColumns": "81,103,108,119,103,72",
+                        "endOffsets": "11303,11407,11516,11636,11740,16540"
                     }
                 },
                 {
@@ -9919,42 +9936,6 @@
                         "endLines": "281",
                         "endColumns": "12",
                         "endOffsets": "19556"
-                    }
-                },
-                {
-                    "source": "/home/emobilis/Downloads/ModusApp/app/src/main/res/values/themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "3",
-                        "endColumns": "12",
-                        "endOffsets": "150"
-                    },
-                    "to": {
-                        "startLines": "282",
-                        "startColumns": "4",
-                        "startOffsets": "19561",
-                        "endLines": "283",
-                        "endColumns": "12",
-                        "endOffsets": "19656"
-                    }
-                },
-                {
-                    "source": "/home/emobilis/Downloads/ModusApp/app/build/generated/res/processDebugGoogleServices/values/values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,137,241,350,470,574",
-                        "endColumns": "81,103,108,119,103,72",
-                        "endOffsets": "132,236,345,465,569,642"
-                    },
-                    "to": {
-                        "startLines": "158,159,160,161,162,229",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "11226,11308,11412,11521,11641,16472",
-                        "endColumns": "81,103,108,119,103,72",
-                        "endOffsets": "11303,11407,11516,11636,11740,16540"
                     }
                 },
                 {
@@ -10148,6 +10129,25 @@
                         "startOffsets": "7049",
                         "endColumns": "53",
                         "endOffsets": "7098"
+                    }
+                },
+                {
+                    "source": "/home/emobilis/Downloads/Modus-Behavioral-Agent/app/src/main/res/values/themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "12",
+                        "endOffsets": "150"
+                    },
+                    "to": {
+                        "startLines": "282",
+                        "startColumns": "4",
+                        "startOffsets": "19561",
+                        "endLines": "283",
+                        "endColumns": "12",
+                        "endOffsets": "19656"
                     }
                 },
                 {

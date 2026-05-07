@@ -30,6 +30,7 @@
         android:extractNativeLibs="false"
         android:label="Modus"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.MODUS_SYSTEM" >
         <activity
             android:name="com.example.modus_system.MainActivity"
