@@ -7,6 +7,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -29,6 +30,8 @@ fun GoldenPathScreen(
 ) {
     val transactions by viewModel.goldenPathTransactions.collectAsState(initial = emptyList())
     val total by viewModel.goldenPathTotal.collectAsState(initial = 0.0)
+    val ironTotal by viewModel.ironShieldTotal.collectAsState(initial = 0.0)
+    val modusScore by viewModel.modusScore.collectAsState(initial = 0)
     val currency by viewModel.selectedCurrency.collectAsState()
     val searchQuery by viewModel.goldenPathSearchQuery.collectAsState()
 
@@ -83,6 +86,11 @@ fun GoldenPathScreen(
                     }
                 },
                 actions = {
+                    IconButton(onClick = {
+                        navController.navigate(Screen.Notifications.createRoute("GOLDEN_PATH"))
+                    }) {
+                        Icon(Icons.Default.Notifications, contentDescription = "Notifications")
+                    }
                     IconButton(onClick = {
                         showSearch = !showSearch
                         if (!showSearch) viewModel.updateGoldenPathSearch("")
@@ -145,6 +153,44 @@ fun GoldenPathScreen(
                             fontSize = 12.sp,
                             color = MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.6f)
                         )
+                    }
+                }
+            }
+
+            // Agent Insight
+            item {
+                val goldenVal = total ?: 0.0
+                val totalSpending = goldenVal + (ironTotal ?: 0.0)
+                
+                Surface(
+                    color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.05f),
+                    shape = MaterialTheme.shapes.medium,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Row(
+                        modifier = Modifier.padding(12.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text("🤖", fontSize = 20.sp)
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column {
+                            Text(
+                                "Agent Analysis",
+                                style = MaterialTheme.typography.labelSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.secondary
+                            )
+                            Text(
+                                text = when {
+                                    totalSpending == 0.0 -> "Waiting for growth data. Your 'Golden Path' starts with the first step."
+                                    modusScore >= 50 -> "Excellent: Your 'Golden Path' is the dominant force. Wealth acceleration active."
+                                    modusScore >= 25 -> "Progress: You are carving a path. Increase growth allocations to reach the 'Golden State'."
+                                    else -> "Warning: Growth is stagnant ($modusScore%). Shift resources from 'Iron Shield' to build your future."
+                                },
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
                     }
                 }
             }

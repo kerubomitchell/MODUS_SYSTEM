@@ -49,6 +49,9 @@ dependencies {
     // Material Icons
     implementation(libs.androidx.compose.material.icons)
 
+    // Coil for Image Loading
+    implementation(libs.coil.compose)
+
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)

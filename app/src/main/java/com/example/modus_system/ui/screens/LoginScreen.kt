@@ -18,6 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.modus_system.data.FirebaseAuthManager
 import com.example.modus_system.data.UserPreferences
 import com.example.modus_system.ui.Screen
 import kotlinx.coroutines.launch
@@ -28,6 +29,7 @@ fun LoginScreen(navController: NavController) {
     val scope = rememberCoroutineScope()
     val context = androidx.compose.ui.platform.LocalContext.current
     val userPreferences = remember { UserPreferences(context) }
+    val firebaseAuth = remember { FirebaseAuthManager() }
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -175,17 +177,32 @@ fun LoginScreen(navController: NavController) {
                         isLoading = true
                         errorMessage = ""
                         scope.launch {
-                            val success = userPreferences.login(
+                            val result = firebaseAuth.login(
                                 email = email,
                                 password = password
                             )
                             isLoading = false
-                            if (success) {
+                            if (result.isSuccess) {
+                                val user = result.getOrNull()
+                                if (user != null) {
+                                    // Fetch profile from Firebase
+                                    val profile = firebaseAuth.getUserProfile(user.uid)
+                                    if (profile != null) {
+                                        userPreferences.saveProfile(
+                                            name = profile["name"] as? String ?: "",
+                                            email = profile["email"] as? String ?: "",
+                                            phone = profile["phone"] as? String ?: ""
+                                        )
+                                    }
+                                }
+                                // Update local login state
+                                userPreferences.setLoggedIn(true)
                                 navController.navigate(Screen.Home.route) {
                                     popUpTo(Screen.Login.route) { inclusive = true }
                                 }
                             } else {
-                                errorMessage = "Invalid email or password. Please try again."
+                                errorMessage = result.exceptionOrNull()?.message 
+                                    ?: "Invalid email or password. Please try again."
                             }
                         }
                     } else {
@@ -328,12 +345,14 @@ fun LoginScreen(navController: NavController) {
                             } else {
                                 resetLoading = true
                                 scope.launch {
-                                    // TODO: Replace with Firebase password reset
-                                    // FirebaseAuth.getInstance()
-                                    //   .sendPasswordResetEmail(resetEmail)
-                                    kotlinx.coroutines.delay(1500)
+                                    val result = firebaseAuth.sendPasswordReset(resetEmail)
                                     resetLoading = false
-                                    resetSuccess = true
+                                    if (result.isSuccess) {
+                                        resetSuccess = true
+                                    } else {
+                                        resetEmailError = result.exceptionOrNull()?.message 
+                                            ?: "Failed to send reset link."
+                                    }
                                 }
                             }
                         },

@@ -8,9 +8,31 @@ import kotlinx.coroutines.tasks.await
 class FirebaseAuthManager {
 
     private val auth = FirebaseAuth.getInstance()
-    private val database = FirebaseDatabase.getInstance().reference
+    private val database = FirebaseDatabase.getInstance("https://modus-system-e7905-default-rtdb.firebaseio.com/").reference
 
     val currentUser: FirebaseUser? get() = auth.currentUser
+
+    // Sync a transaction to the cloud
+    suspend fun syncTransaction(userId: String, transaction: Transaction) {
+        try {
+            database.child("users").child(userId)
+                .child("transactions").child(transaction.id.toString())
+                .setValue(transaction).await()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    // Delete a transaction from the cloud
+    suspend fun deleteCloudTransaction(userId: String, transactionId: Int) {
+        try {
+            database.child("users").child(userId)
+                .child("transactions").child(transactionId.toString())
+                .removeValue().await()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 
     // Register with email and password
     suspend fun register(

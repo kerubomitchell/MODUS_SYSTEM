@@ -9,14 +9,17 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.modus_system.data.UserPreferences
+import com.example.modus_system.ui.screens.AgentPulseScreen
 import com.example.modus_system.ui.screens.EditTransactionScreen
 import com.example.modus_system.ui.screens.GoldenPathScreen
 import com.example.modus_system.ui.screens.HomeScreen
 import com.example.modus_system.ui.screens.IronShieldScreen
 import com.example.modus_system.ui.screens.LoginScreen
+import com.example.modus_system.ui.screens.NotificationsScreen
 import com.example.modus_system.ui.screens.RegisterScreen
 import com.example.modus_system.ui.screens.SettingsScreen
 import com.example.modus_system.ui.screens.SplashScreen
+import com.example.modus_system.ui.screens.WealthAnalysisScreen
 import com.example.modus_system.viewmodel.TransactionViewModel
 
 @Composable
@@ -48,6 +51,25 @@ fun Navigation() {
         }
         composable(Screen.Settings.route) {
             SettingsScreen(navController = navController, viewModel = viewModel)
+        }
+        composable(Screen.WealthAnalysis.route) {
+            WealthAnalysisScreen(navController = navController, viewModel = viewModel)
+        }
+        composable(Screen.AgentPulse.route) {
+            AgentPulseScreen(navController = navController, viewModel = viewModel)
+        }
+        composable(
+            route = Screen.Notifications.route,
+            arguments = listOf(
+                navArgument("category") { type = NavType.StringType }
+            )
+        ) { backStackEntry ->
+            val category = backStackEntry.arguments?.getString("category") ?: "GENERAL"
+            NotificationsScreen(
+                navController = navController,
+                viewModel = viewModel,
+                category = category
+            )
         }
         composable(
             route = Screen.EditTransaction.route,

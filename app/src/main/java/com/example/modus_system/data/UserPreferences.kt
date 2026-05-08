@@ -16,6 +16,28 @@ class UserPreferences(private val context: Context) {
         val USER_PASSWORD = stringPreferencesKey("user_password")
         val IS_LOGGED_IN = booleanPreferencesKey("is_logged_in")
         val IS_REGISTERED = booleanPreferencesKey("is_registered")
+        val TARGET_SCORE = stringPreferencesKey("target_score") // Stored as string to handle empty/default
+        val USER_PHOTO_URI = stringPreferencesKey("user_photo_uri")
+    }
+
+    val userPhotoUri: Flow<String?> = context.dataStore.data.map {
+        it[USER_PHOTO_URI]
+    }
+
+    suspend fun saveUserPhotoUri(uri: String) {
+        context.dataStore.edit {
+            it[USER_PHOTO_URI] = uri
+        }
+    }
+
+    val targetScore: Flow<Int> = context.dataStore.data.map {
+        it[TARGET_SCORE]?.toIntOrNull() ?: 50
+    }
+
+    suspend fun saveTargetScore(score: Int) {
+        context.dataStore.edit {
+            it[TARGET_SCORE] = score.toString()
+        }
     }
 
     val userName: Flow<String> = context.dataStore.data.map {
@@ -45,6 +67,22 @@ class UserPreferences(private val context: Context) {
             it[USER_EMAIL] = email
             it[USER_PHONE] = phone
             it[USER_PASSWORD] = password
+            it[IS_REGISTERED] = true
+            it[IS_LOGGED_IN] = true
+        }
+    }
+
+    suspend fun setLoggedIn(loggedIn: Boolean) {
+        context.dataStore.edit {
+            it[IS_LOGGED_IN] = loggedIn
+        }
+    }
+
+    suspend fun saveProfile(name: String, email: String, phone: String) {
+        context.dataStore.edit {
+            it[USER_NAME] = name
+            it[USER_EMAIL] = email
+            it[USER_PHONE] = phone
             it[IS_REGISTERED] = true
         }
     }

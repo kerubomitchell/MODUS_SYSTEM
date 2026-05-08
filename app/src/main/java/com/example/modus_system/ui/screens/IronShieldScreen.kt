@@ -1,5 +1,6 @@
 package com.example.modus_system.ui.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -7,6 +8,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -29,6 +31,8 @@ fun IronShieldScreen(
 ) {
     val transactions by viewModel.ironShieldTransactions.collectAsState(initial = emptyList())
     val total by viewModel.ironShieldTotal.collectAsState(initial = 0.0)
+    val goldenTotal by viewModel.goldenPathTotal.collectAsState(initial = 0.0)
+    val recurringCosts by viewModel.recurringShieldCosts.collectAsState(initial = emptyList())
     val currency by viewModel.selectedCurrency.collectAsState()
     val searchQuery by viewModel.ironShieldSearchQuery.collectAsState()
 
@@ -82,6 +86,11 @@ fun IronShieldScreen(
                     }
                 },
                 actions = {
+                    IconButton(onClick = {
+                        navController.navigate(Screen.Notifications.createRoute("IRON_SHIELD"))
+                    }) {
+                        Icon(Icons.Default.Notifications, contentDescription = "Notifications")
+                    }
                     IconButton(onClick = {
                         showSearch = !showSearch
                         if (!showSearch) viewModel.updateIronShieldSearch("")
@@ -144,6 +153,111 @@ fun IronShieldScreen(
                             fontSize = 12.sp,
                             color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.6f)
                         )
+                    }
+                }
+            }
+
+            // Agent Insight
+            item {
+                val ironVal = total ?: 0.0
+                val totalSpending = ironVal + (goldenTotal ?: 0.0)
+                val ironPercent = if (totalSpending > 0) (ironVal / totalSpending * 100).toInt() else 0
+                
+                val leakNudge = if (recurringCosts.isNotEmpty()) {
+                    "\n\n🚨 Agent Alert: ${recurringCosts.size} recurring 'leaks' detected in your shield."
+                } else ""
+
+                Surface(
+                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.05f),
+                    shape = MaterialTheme.shapes.medium,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Row(
+                        modifier = Modifier.padding(12.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text("🤖", fontSize = 20.sp)
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column {
+                            Text(
+                                "Agent Analysis",
+                                style = MaterialTheme.typography.labelSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.primary
+                            )
+                            Text(
+                                text = when {
+                                    totalSpending == 0.0 -> "Waiting for data to analyze your defensive shield."
+                                    ironPercent > 80 -> "Alert: Your shield is too heavy. $ironPercent% of funds are locked in essentials."
+                                    ironPercent > 50 -> "Observation: Shield is stable, but limits your offensive 'Golden Path' growth."
+                                    else -> "Efficient: Your shield is optimized at $ironPercent%. You have high mobility for growth."
+                                } + leakNudge,
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                }
+            }
+
+            // Leaky Shield Section
+            if (recurringCosts.isNotEmpty()) {
+                item {
+                    Text(
+                        "Potential Shield Leaks",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp,
+                        modifier = Modifier.padding(top = 8.dp)
+                    )
+                    Text(
+                        "The Agent detected recurring charges. Audit these to unlock growth.",
+                        fontSize = 11.sp,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                    )
+                }
+
+                item {
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.3f)
+                        ),
+                        border = BorderStroke(1.dp, MaterialTheme.colorScheme.error.copy(alpha = 0.2f))
+                    ) {
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            recurringCosts.take(3).forEach { (merchant, avgAmount) ->
+                                Row(
+                                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Text("💧", fontSize = 14.sp)
+                                        Spacer(modifier = Modifier.width(8.dp))
+                                        Text(
+                                            merchant,
+                                            style = MaterialTheme.typography.bodyMedium,
+                                            fontWeight = FontWeight.Medium
+                                        )
+                                    }
+                                    Text(
+                                        "$currency ${"%.2f".format(avgAmount)}",
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        fontWeight = FontWeight.Bold,
+                                        color = MaterialTheme.colorScheme.error
+                                    )
+                                }
+                            }
+                            if (recurringCosts.size > 3) {
+                                Text(
+                                    "+ ${recurringCosts.size - 3} more detected",
+                                    fontSize = 10.sp,
+                                    color = MaterialTheme.colorScheme.error,
+                                    modifier = Modifier.align(Alignment.End),
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                        }
                     }
                 }
             }
