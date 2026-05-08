@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.modus_system.app-mergeDebugResources-68:/values-v30/values-v30.xml",
+            "outputFile": "com.example.modus_system.app-mergeDebugResources-70:/values-v30/values-v30.xml",
             "map": [
                 {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/d3536c44f6cfb1697d931294850403e9/transformed/material3-release/res/values-v30/values-v30.xml",
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/2042bd3c376d0fcbf8e1c3995c8693c2/transformed/material3-release/res/values-v30/values-v30.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

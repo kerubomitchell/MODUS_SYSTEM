@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="ic_launcher_background">#1A1A3E</color>
     <string name="app_name">Modus</string>
     <string name="gcm_defaultSenderId" translatable="false">756566512488</string>
     <string name="google_api_key" translatable="false">AIzaSyCVaQKP_p74TeZ8ccF4TM6GLtdM8JqYyK8</string>

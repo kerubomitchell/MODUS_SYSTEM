@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.modus_system.app-mergeDebugResources-68:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.modus_system.app-mergeDebugResources-70:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/e5c45f2dcc7e19ae14c7a9d3eaf0d1cb/transformed/play-services-auth-20.7.0/res/values-watch-v20/values.xml",
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/93701ba932b4ecaebc5ea1b1c735cfae/transformed/play-services-auth-20.7.0/res/values-watch-v20/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

@@ -1,44 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.modus_system.app-mergeDebugResources-68:/values-es-rUS/values-es-rUS.xml",
+            "outputFile": "com.example.modus_system.app-mergeDebugResources-70:/values-es-rUS/values-es-rUS.xml",
             "map": [
                 {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/8504bb006eeca8942747182a85162296/transformed/material-release/res/values-es-rUS/values-es-rUS.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "88",
-                        "endOffsets": "139"
-                    },
-                    "to": {
-                        "startLines": "98",
-                        "startColumns": "4",
-                        "startOffsets": "10921",
-                        "endColumns": "88",
-                        "endOffsets": "11005"
-                    }
-                },
-                {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/cf6ac5e685f4f0f1457239e56ba2a322/transformed/ui-release/res/values-es-rUS/values-es-rUS.xml",
-                    "from": {
-                        "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "186,285,367,465,568,657,736,832,924,1011,1098,1188,1265,1350,1426,1506,1582,1660,1730",
-                        "endColumns": "98,81,97,102,88,78,95,91,86,86,89,76,84,75,79,75,77,69,122",
-                        "endOffsets": "280,362,460,563,652,731,827,919,1006,1093,1183,1260,1345,1421,1501,1577,1655,1725,1848"
-                    },
-                    "to": {
-                        "startLines": "12,13,33,34,35,39,40,99,100,101,102,103,104,105,106,107,109,110,111",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1153,1252,3772,3870,3973,4385,4464,11010,11102,11189,11276,11366,11443,11528,11604,11684,11861,11939,12009",
-                        "endColumns": "98,81,97,102,88,78,95,91,86,86,89,76,84,75,79,75,77,69,122",
-                        "endOffsets": "1247,1329,3865,3968,4057,4459,4555,11097,11184,11271,11361,11438,11523,11599,11679,11755,11934,12004,12127"
-                    }
-                },
-                {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/824c4316248ad6a534b57f8893ff3a20/transformed/play-services-base-18.5.0/res/values-es-rUS/values.xml",
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/cf89361bb3cec1644fc32a7320d53527/transformed/play-services-base-18.5.0/res/values-es-rUS/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/b582fd7c6f4854f9efe987245e8acc49/transformed/credentials-1.2.0-rc01/res/values-es-rUS/values-es-rUS.xml",
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/dcab9ec780659e7c6361e378302d9472/transformed/credentials-1.2.0-rc01/res/values-es-rUS/values-es-rUS.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -72,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/c9129d8ec1a6f66b7f1b1abfac6ba9b3/transformed/core-1.16.0/res/values-es-rUS/values-es-rUS.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,154,256,356,454,561,667,787",
-                        "endColumns": "98,101,99,97,106,105,119,100",
-                        "endOffsets": "149,251,351,449,556,662,782,883"
-                    },
-                    "to": {
-                        "startLines": "5,6,7,8,9,10,11,108",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "421,520,622,722,820,927,1033,11760",
-                        "endColumns": "98,101,99,97,106,105,119,100",
-                        "endOffsets": "515,617,717,815,922,1028,1148,11856"
-                    }
-                },
-                {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/e281a4b5cd785df26e90420f33373200/transformed/browser-1.4.0/res/values-es-rUS/values-es-rUS.xml",
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/c6db08eb3f70c2d464eef44bf67a3c67/transformed/browser-1.4.0/res/values-es-rUS/values-es-rUS.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -106,7 +55,24 @@
                     }
                 },
                 {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/867c8ce41fb912ae7e01e7e5c2b33a20/transformed/play-services-basement-18.5.0/res/values-es-rUS/values.xml",
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/403fbe2b2ea7fee9df5466c8654e9b33/transformed/material-release/res/values-es-rUS/values-es-rUS.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "88",
+                        "endOffsets": "139"
+                    },
+                    "to": {
+                        "startLines": "98",
+                        "startColumns": "4",
+                        "startOffsets": "10921",
+                        "endColumns": "88",
+                        "endOffsets": "11005"
+                    }
+                },
+                {
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/6df234e55652988cbc305f08ed2af1f3/transformed/play-services-basement-18.5.0/res/values-es-rUS/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -123,7 +89,41 @@
                     }
                 },
                 {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/d3536c44f6cfb1697d931294850403e9/transformed/material3-release/res/values-es-rUS/values-es-rUS.xml",
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/e6561aa9278c44745badbf7f8283e264/transformed/foundation-release/res/values-es-rUS/values-es-rUS.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,135,235",
+                        "endColumns": "79,99,101",
+                        "endOffsets": "130,230,332"
+                    },
+                    "to": {
+                        "startLines": "4,112,113",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "341,12132,12232",
+                        "endColumns": "79,99,101",
+                        "endOffsets": "416,12227,12329"
+                    }
+                },
+                {
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/79150291259f4e1bac89e302ef116b2e/transformed/ui-release/res/values-es-rUS/values-es-rUS.xml",
+                    "from": {
+                        "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "186,285,367,465,568,657,736,832,924,1011,1098,1188,1265,1350,1426,1506,1582,1660,1730",
+                        "endColumns": "98,81,97,102,88,78,95,91,86,86,89,76,84,75,79,75,77,69,122",
+                        "endOffsets": "280,362,460,563,652,731,827,919,1006,1093,1183,1260,1345,1421,1501,1577,1655,1725,1848"
+                    },
+                    "to": {
+                        "startLines": "12,13,33,34,35,39,40,99,100,101,102,103,104,105,106,107,109,110,111",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1153,1252,3772,3870,3973,4385,4464,11010,11102,11189,11276,11366,11443,11528,11604,11684,11861,11939,12009",
+                        "endColumns": "98,81,97,102,88,78,95,91,86,86,89,76,84,75,79,75,77,69,122",
+                        "endOffsets": "1247,1329,3865,3968,4057,4459,4555,11097,11184,11271,11361,11438,11523,11599,11679,11755,11934,12004,12127"
+                    }
+                },
+                {
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/2042bd3c376d0fcbf8e1c3995c8693c2/transformed/material3-release/res/values-es-rUS/values-es-rUS.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -140,20 +140,20 @@
                     }
                 },
                 {
-                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/6958c8445a661775a9012f7c76759c56/transformed/foundation-release/res/values-es-rUS/values-es-rUS.xml",
+                    "source": "/home/emobilis/.gradle/caches/9.0.0/transforms/36b52e46c5f71110d59be1fdcf247048/transformed/core-1.16.0/res/values-es-rUS/values-es-rUS.xml",
                     "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,135,235",
-                        "endColumns": "79,99,101",
-                        "endOffsets": "130,230,332"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,154,256,356,454,561,667,787",
+                        "endColumns": "98,101,99,97,106,105,119,100",
+                        "endOffsets": "149,251,351,449,556,662,782,883"
                     },
                     "to": {
-                        "startLines": "4,112,113",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "341,12132,12232",
-                        "endColumns": "79,99,101",
-                        "endOffsets": "416,12227,12329"
+                        "startLines": "5,6,7,8,9,10,11,108",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "421,520,622,722,820,927,1033,11760",
+                        "endColumns": "98,101,99,97,106,105,119,100",
+                        "endOffsets": "515,617,717,815,922,1028,1148,11856"
                     }
                 }
             ]

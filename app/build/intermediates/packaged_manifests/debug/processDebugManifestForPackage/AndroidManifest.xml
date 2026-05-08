@@ -32,6 +32,16 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.MODUS_SYSTEM" >
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.modus_system.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <activity
             android:name="com.example.modus_system.MainActivity"
             android:exported="true"
